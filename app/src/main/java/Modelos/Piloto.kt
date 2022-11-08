@@ -1,4 +1,12 @@
 package Modelos
 
-class Piloto(var nombre:String, var edad:Int, var experiencia:Int, var password:String) {
+import java.util.*
+
+data class Piloto(
+    var nombre:String,
+    var pass:String,
+    var edad:Int,
+    var experiencia:Int)
+    : java.io.Serializable{
 }
+

@@ -2,6 +2,7 @@ package Auxiliar
 
 import Conexion.AdminSQLIteConexion
 import Modelos.Persona
+import Modelos.Piloto
 import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 
@@ -20,6 +21,18 @@ object Conexion {
         registro.put("nombre", p.nombre)
         registro.put("pass", p.pass)
         bd.insert("personas", null, registro)
+        bd.close()
+    }
+
+    fun addPiloto(contexto: AppCompatActivity, p: Piloto) {
+        val admin = AdminSQLIteConexion(contexto, nombreBD, null, 1)
+        val bd = admin.writableDatabase
+        val registro = ContentValues()
+        registro.put("nombre", p.nombre)
+        registro.put("pass", p.pass)
+        registro.put("edad", p.edad)
+        registro.put("experiencia", p.experiencia)
+        bd.insert("pilotos", null, registro)
         bd.close()
     }
 

@@ -8,6 +8,8 @@ class AdminSQLIteConexion(context: Context, name: String, factory: SQLiteDatabas
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("create table personas(nombre text primary key, pass text)")
+        db.execSQL("create table pilotos(nombre text primary key, pass text, edad number, experiencia number)")
+        db.execSQL("create table naves(matricula text primary key, apta number, foto text)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
